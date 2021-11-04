@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    #all {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: #000000;
+      border-radius: 30px;
+      padding: 20px;
+    }
+    #divR {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      background: #220000;
+    }
+    #divY {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      background: #222200;
+    }
+    #divG {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      background: #002200;
+    }
+    #btn {
+      color: #000000;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+<audio id="idaudio" src="snd.mp3" preload="auto"></audio>
+<center>
+<br>
+<input id="btn" type="button" value="ТЫК" onclick="myBtn()">
+</center>
+<div id="all">
+<br>
+<center>
+<div id="divR"></div><br>
+<div id="divY"></div><br>
+<div id="divG"></div><br><br>
+</center>
+</div>
+
+<script>
+  var v = 0;
+  function myBtn() {
+    document.getElementById('idaudio').play();
+    switch (v) {
+      case 0:
+      document.getElementById('divR').style.background = "#ff0000";
+      document.getElementById('divY').style.background = "#222200";
+      document.getElementById('divG').style.background = "#002200";
+      v++;
+      break;
+
+      case 1:
+      document.getElementById('divR').style.background = "#220000";
+      document.getElementById('divY').style.background = "#ffff00";
+      document.getElementById('divG').style.background = "#002200";
+      v++;
+      break;
+
+      case 2:
+      document.getElementById('divR').style.background = "#220000";
+      document.getElementById('divY').style.background = "#222200";
+      document.getElementById('divG').style.background = "#00ff00";
+      v = 0;
+      break;
+    }
+  }
+</script>
+
+</body>
+</html>
